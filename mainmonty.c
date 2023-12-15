@@ -1,6 +1,7 @@
 #include "monty.h"
 
 unsigned int line_number = 0;
+unsigned int data_type = 0; /*0 for stack 1 for queue*/
 
 /**
  * main - the main function controling the program flow

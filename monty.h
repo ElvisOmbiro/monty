@@ -13,6 +13,7 @@
 
 
 extern unsigned int line_number;
+extern unsigned int data_type;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
