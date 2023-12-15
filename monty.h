@@ -1,6 +1,7 @@
 #ifndef _MONTY_H
 #define _MONTY_H
 
+#define  _POSIX_C_SOURCE 200809L
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -9,7 +10,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <ctype.h>
-#include <unistd.h>
+
 
 extern unsigned int line_number;
 
@@ -44,14 +45,26 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-int main(int argc, char *argv[])
-void frees_stack(stack_t **stack)
+stack_t *build_list(stack_t *head);
+void call(char **tokens, stack_t **stack);
+char **tokenize(char *buffer);
+stack_t *add_node_start(stack_t *h, int n);
+void frees_stack(stack_t **stack);
+void is_valid(char **token, stack_t **stack);
 void push(stack_t **stack, unsigned int n);
 void pall(stack_t **stack, unsigned int n);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
-
+void rotl(stack_t **stack, unsigned int line_number);
+void rotr(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
+void _div(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H */
