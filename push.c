@@ -34,7 +34,7 @@ void push(stack_t **stack, unsigned int n)
 		else
 		{
 			tmp = *stack;
-			while(tmp->next)
+			while (tmp->next)
 				tmp = tmp->next;
 			node->prev = tmp;
 			tmp->next = node;
@@ -44,10 +44,10 @@ void push(stack_t **stack, unsigned int n)
 
 /**
  * nop - does nothing
- * stack: pointer to the head of the stack
+ * @stack: pointer to the head of the stack
  * @line_number: line_nunmber
  */
-void nop(stack_t **stack, unsigned line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
@@ -55,11 +55,11 @@ void nop(stack_t **stack, unsigned line_number)
 
 /**
  * rotl -  rotates the stack to the top
- * stack: pointer to the head of the stack
+ * @stack: pointer to the head of the stack
  * @line_number: line_nunmber
  */
 
-void rotl(stack_t **stack, unsigned line_number)
+void rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp1, *tmp2;
 
@@ -87,7 +87,7 @@ void rotl(stack_t **stack, unsigned line_number)
 
 /**
  * rotr -  rotates the stack to the bottom
- * stack: pointer to the head of the stack
+ * @stack: pointer to the head of the stack
  * @line_number: line_nunmber
  */
 void rotr(stack_t **stack, unsigned int line_number)
