@@ -4,6 +4,8 @@ static instruction_t ops[] = {
 		{"push", push},
 		{"pall", pall},
 		{"pop", pop},
+		{"rotl", rotl},
+		{"rotr", rotr},
 		{"swap", swap},
 		{"add", add},
 		{"pint", pint},
@@ -41,7 +43,7 @@ void call(char **tokens, stack_t **stack)
 
 	if (strcmp(tokens[0], "push") == 0)
 	{
-		is_valid(tokens, stack);
+		is_usable(tokens, stack);
 		(*stack)->n = atoi(tokens[1]);
 	}
 	else if (!(ops[cg].opcode))
@@ -54,11 +56,11 @@ void call(char **tokens, stack_t **stack)
 }
 
 /**
- * is_valid - check if second spot of a token array is valid
+ * is_usable - check if second spot of a token array is valid
  * @token: tokens value to check
  * @stack: pointer to a stack
  */
-void is_valid(char **token, stack_t **stack)
+void is_usable(char **token, stack_t **stack)
 {
 	int cg = 0;
 

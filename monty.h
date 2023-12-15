@@ -50,7 +50,7 @@ void call(char **tokens, stack_t **stack);
 char **tokenize(char *buffer);
 stack_t *add_node_start(stack_t *h, int n);
 void frees_stack(stack_t **stack);
-void is_valid(char **token, stack_t **stack);
+void is_usable(char **token, stack_t **stack);
 void push(stack_t **stack, unsigned int n);
 void pall(stack_t **stack, unsigned int n);
 void swap(stack_t **stack, unsigned int line_number);
