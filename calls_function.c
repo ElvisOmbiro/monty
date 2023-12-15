@@ -13,6 +13,8 @@ static instruction_t ops[] = {
 		{"mod", mod},
 		{"sub", sub},
 		{"pchar", pchar},
+		{"nop", nop},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 /**
@@ -30,6 +32,16 @@ void call(char **tokens, stack_t **stack)
 	{
 		if (tokens[0][0] == '#')
 			return;
+		if (strcmp(tokens[0], "queue") == 0)
+		{
+			data_type = 1;
+			return;
+		}
+		if (strcmp(tokens[0], "stack") == 0)
+		{
+			data_type = 0;
+			return;
+		}
 		if (strcmp(tokens[0], ops[cg].opcode) == 0)
 		{
 			if (ops[cg].f)
@@ -38,7 +50,6 @@ void call(char **tokens, stack_t **stack)
 		}
 		cg++;
 	}
-
 	if (strcmp(tokens[0], "push") == 0)
 	{
 		is_valid(tokens, stack);
