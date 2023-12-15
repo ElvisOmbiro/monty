@@ -13,4 +13,4 @@ pall
 queue
 push 11111
 add
-pal
+pall
